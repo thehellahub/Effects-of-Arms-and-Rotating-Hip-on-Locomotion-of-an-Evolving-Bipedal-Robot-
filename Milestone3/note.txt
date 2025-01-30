@@ -1,0 +1,20 @@
+Nicholas Hella
+CS 206: Final Project Milestone 3
+03/20/23
+
+Project Description:
+
+Of all the animals on Earth, only few express bipedal locomotion. I plan to generate bipedal robots of varying body forms (with arms, with no arms, with rotating hip, without rotating hip) and then test for which permutation of attributes the evolutionary algorithm can evolve the fastest (or most successful) gait (forward motion).
+
+
+Progress Note:
+
+For this milesotne, I've updated my code to add motors to the joints on the body of my robot. The motors were added to the following joints on the body of the robot: knees, neck, thighs (connecting to the hips), shoulders, elbows. The motors on the arms and rotating hip are toggled according to the value of ARMS and ROTATING_HIP in the config file, constants.py. The motors are each given values to simulate random movement. 
+
+Demonstration: https://youtu.be/K7tLzV28ZkY
+
+
+Milestone Description:
+
+I’ll now modify the robot’s neural network to connect the sensors to the motors. To prove the NN is working, I’ll submit a video showing the two-legged robot moving randomly.
+

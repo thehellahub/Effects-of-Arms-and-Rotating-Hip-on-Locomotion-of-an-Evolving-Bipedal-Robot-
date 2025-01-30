@@ -1,0 +1,145 @@
+Nicholas Hella
+CS 206: Final Project Milestones 7
+04/17/23
+
+Project Description:
+
+	Of all the animals on Earth, only few express bipedal locomotion. I plan to generate bipedal robots of varying body forms (with arms, with no arms, with rotating hip, without rotating hip) and then test for which permutation of attributes the evolutionary algorithm can evolve the fastest (or most successful) gait (forward motion).
+
+
+Progress Note: 
+
+	I'm testing across 4 body permutations (no arms + no rotating hip, no arms + rotating hip, arms + no rotating hip, arms + rotating hip), each with 4 different fitness functions. I have reduced the body size by 66.66% to artificially help the robot maintain its balance by being lower to the ground. The training varied from 18-26 hours but the settings are the same across all the runs: 10 total PHC runs, 1 in 5 odds of starting from the brain of a previous PHC run. Each PHC runs w/ 10 generations, population size 10, and 1000 iterations. The results are interesting.. Clearly having arms is helpful, and comparing the number of successes between arms and no rotating hip and arms and rotating hip shows that having both arms and a rotating hip is more helpful. I may need to also reduce the motor strength (120) when the robot has no arms, as it hops at first and then has a hard time balancing after it lands. It's quite interesting how fitness functions 1 and 2 show the most success despite being the least descriptive, but yet I still think I have some fitness-function hunting left to do to prioritize balancing. Given the most success came from fitness functions 1 and 2, I will try adding coefficients and exponents to their attributes to see if I can help further promote standing upright (not falling).
+
+	
+
+Fitness Functions:
+
+	Fitness Function 1: 
+		
+		xCoordinateOfLinkZero * zCoordinateOfLinkZero
+
+	Fitness Function 2: 
+
+		xCoordinateOfLinkZero * zCoordinateOfLinkZero * time_standing_upright
+		 
+			Note: time_standing_upright = amount of time (in seconds) that the head was taller than half its body height
+
+	Fitness Function 3: 
+		
+		xCoordinateOfLinkZero * avg_height
+
+	Fitness Function 4: 
+		
+		xCoordinateOfLinkZero * zCoordinateOfLinkZero * time_standing_upright * avg_height
+
+
+RESULTS:
+
+
+	ARMS 0 ROTATING HIP 0
+
+		FITNESS FUNCTION 1
+
+			YOUTUBE: https://youtu.be/Gf2Jv1lyJyc (FALLS)
+
+			PLOT: https://imgur.com/a/PZ7MU94
+
+		FITNESS FUNCTION 2
+
+			YOUTUBE: https://youtu.be/FHhl_tdTDpE (FALLS)
+
+			PLOT: https://imgur.com/a/sLmmi2t
+
+		FITNESS FUNCTION 3
+
+			YOUTUBE: https://youtu.be/ik3Fv2G-QGQ (FALLS)
+
+			PLOT: https://imgur.com/a/MRJc6qK
+
+		FITNESS FUNCTION 4
+
+			YOUTUBE: https://youtu.be/ex72UcJ6PG4 (FALLS)
+
+			PLOT: https://imgur.com/a/nbkPL3Z
+
+
+	ARMS 1 ROTATING HIP 0
+
+		FITNESS FUNCTION 1
+
+			YOUTUBE: https://youtu.be/RdiDtMR70YM (SUCCESS)
+
+			PLOT: https://imgur.com/a/IA0kQDV
+
+		FITNESS FUNCTION 2
+
+			YOUTUBE: https://youtu.be/bgdFZnuDeAI (FALLS)
+
+			PLOT: https://imgur.com/a/hMIwdji
+
+		FITNESS FUNCTION 3
+
+			YOUTUBE: https://youtu.be/LmAUGokGpgQ (FALLS)
+
+			PLOT: https://imgur.com/a/jOMXIMJ
+
+		FITNESS FUNCTION 4
+
+			YOUTUBE: https://youtu.be/xOtHJGjgxBk (SUCCESS FOR A BIT.. THEN FALLS)
+
+			PLOT: https://imgur.com/a/qBg1mWn
+
+	ARMS 0 ROTATING HIP 1
+
+		FITNESS FUNCTION 1
+
+			YOUTUBE: https://youtu.be/bI8vdscIQrg (FALLS)
+
+			PLOT: https://imgur.com/a/Y8pmZJA
+
+		FITNESS FUNCTION 2
+
+			YOUTUBE: https://youtu.be/Hsb3DGKTgJc (FALLS)
+
+			PLOT: https://imgur.com/a/4GQ0HSl
+
+		FITNESS FUNCTION 3
+
+			YOUTUBE: https://youtu.be/xI-19W-jlUw (FALLS)
+
+			PLOT: https://imgur.com/a/02gQUut
+
+		FITNESS FUNCTION 4
+
+			YOUTUBE: https://youtu.be/Bf5A58jW8x8 (FALLS)
+
+			PLOT: https://imgur.com/a/lyIH8c4
+
+	ARMS 1 ROTATING HIP 1
+
+		FITNESS FUNCTION 1
+
+			YOUTUBE: https://youtu.be/qC3O6Ov0cQI (SUCCESS) (BEST!)
+
+			PLOT: https://imgur.com/a/QZolxtc
+
+		FITNESS FUNCTION 2
+
+			YOUTUBE: https://youtu.be/sWjwOFJk1VE (SUCCESS)
+
+			PLOT: https://imgur.com/a/HUdz4G9
+
+		FITNESS FUNCTION 3
+
+			YOUTUBE: https://youtu.be/csvJ9m1ZMGw (FALLS)
+
+			PLOT: https://imgur.com/a/gFgFeQV
+
+		FITNESS FUNCTION 4
+
+			YOUTUBE: https://youtu.be/0H9NE4Bpth4 (FALLS)
+
+			PLOT: https://drive.google.com/file/d/1kpSU40emulM0WUayKoc-Mh3FPI9Z8E1o/view?usp=share_link
+
+				Note: imgur failed to upload my png file afer many attempts, thus resorting to good ol google drive

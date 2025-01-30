@@ -1,0 +1,15 @@
+Nicholas Hella
+CS 206: Final Project Milestones 4
+03/27/23
+
+Project Description:
+
+Of all the animals on Earth, only few express bipedal locomotion. I plan to generate bipedal robots of varying body forms (with arms, with no arms, with rotating hip, without rotating hip) and then test for which permutation of attributes the evolutionary algorithm can evolve the fastest (or most successful) gait (forward motion).
+
+
+Progress Note:
+
+For this milestone, I refactored my code to be object oriented as in assignment 5. Then, as in assignments 6-7, I created a  neural network to connect the sensors to the motors. Following homework assignment 8, I then created a "hill climber", with a toggleable amount of generations and iterations to manipulate the neural network such that it achieves (or attempts to achieve) successful forward locomotion for the robot. As for the fitness function, I'm using the product of the amount moved on the x coordinate and the z coordinate, measuring from the head (since the head is the root). In the video, it's clear that the robot does not make much visual progress.. So my next steps are to work on fine-tuning the fitness function to better judge the NN and then, following the steps illustrated in homework assignment 9, to create a parallel hill climber. 
+
+Demonstration: https://youtu.be/7nBts-mikqs
+

@@ -1,0 +1,20 @@
+Nicholas Hella
+CS 206: Final Project Milestones 2
+03/13/23
+
+Project Description:
+
+Of all the animals on Earth, only few express bipedal locomotion. I plan to generate bipedal robots of varying body forms (with arms, with no arms, with rotating hip, without rotating hip) and then test for which permutation of attributes the evolutionary algorithm can evolve the fastest (or most successful) gait (forward motion).
+
+
+Progress Note:
+
+For this milesotne, I've updated my code to add touch sensors on the body of my robot. The touch sensors were added to the following links on the body of the robot: left foot, right foot, lower left leg, lower right leg, upper left leg, upper right leg, upper left arm, upper right arm, lower left arm, lower right arm. The sensors on the arms are toggled according to the value of ARMS in the config file, constants.py. 
+
+Demonstration: https://youtu.be/xs8Ddu9dH3k
+
+
+Milestone:
+
+I’ll now modify my code to generate sensors. I’ll submit images of how the values of these sensors change as I drag my robot around with a mouse, like we did in the Sensors module.
+

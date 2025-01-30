@@ -1,0 +1,41 @@
+Nicholas Hella
+CS 206: Final Project Milestones 5
+04/03/23
+
+Project Description:
+
+Of all the animals on Earth, only few express bipedal locomotion. I plan to generate bipedal robots of varying body forms (with arms, with no arms, with rotating hip, without rotating hip) and then test for which permutation of attributes the evolutionary algorithm can evolve the fastest (or most successful) gait (forward motion).
+
+
+Progress Note:
+
+For this milestone, I implemented a parallel hill climber code framework, as we did in Assignment 9, and more. For each generation (evolution) in a given parent/child (hill climber run), the fitness score is captured in a PHC class-level dictionary, parent__2__fitness, where the key is an index-identifier for a parent (hill climber run) and the value is a list of the parent fitness scores per generation of the hill climber algorithm for the associated parent. Likewise, at the end of each full PHC run, the fitness score from the most successful generation is stored in a file "best_fitness_score_on_record.txt" and the nerual network weights for this generation are stored similarly in another file called "best_weights_on_record.txt". 
+
+With the PHC class-level dictioary and these two files, I can do four things:
+
+1.) Identify which parent (hill climber run) produced highest fitness score using the parent__2__fitness dict
+2.) Recall the best fitness score
+3.) Recall the brain that produced the best fitness score
+4.) Understand the rate of improvement for a given "parent" (hill climber run) using the parent__2__fitness dictionary
+
+Attributes such as the number of parents (hill climber runs) are toggled using a variable in the constants.py file called POPULATION_SIZE. The number of generations (evolutions) per parent are toggled using the NUMBER_OF_GENERATIONS variable.
+
+Lastly, I wrote a wrapper-class, "PHC_Wrapper", that wraps around the Parallel Hill Climber class by calling it N-many times. The value of N is controlled by a variable in the constants file, "PHC_RUNS". 
+
+For each PHC run called by the wrapper class, the best fitness score produced is stored in a PHC_Wrapper class-level list called "phc_fitness_scores". Likewise, another class-level dictionary, phc_run__2__fitness_scores_per_generation_of_best_parent, captures the fitness score per generation of the best parent (hill climber) from each full PHC run, so that I can track the rate of improvement per PHC run from the best parent (hill climber). Between PHC runs, since the best NN weights per PHC run are stored on disk in the best_weights_score_on_record.txt file, the PHC runs also continually evolve off one another. 
+
+
+My next steps of improvement are to do the following:
+
+1.) Toggle how often a PHC run (not a generation, but a full PHC run) initializes from a previous brain (as opposed to a new brain with completely random weights) to avoid getting stuck in local optima 
+2.) Run the algorithm on many PHC runs, each with a large population size and number of generations (increasing the values for PHC_RUNS, POPULATION_SIZE, and NUMBER_OF_GENERATIONS)
+3.) Serialize the PHC_Wrapper class-level dictionary, phc_run__2__fitness_scores_per_generation_of_best_parent, so that I can write side-scripts that can plot/visualize the progress of my algorithm
+4.) Write the side scripts that plot/visualize the progress of my algorithm and run them
+5.) Repeat steps 2-4 against various fitness functions until I can see successful forward locomotion
+6.) Once I land on a solid fitness function, repeat stepts 2-4 for varying body attributes (no arms, arms, no rotating hip, rotating hip).
+
+
+In the video demonstration below, you see a robot that evolved from 5 PHC runs, each with a population size of 5, each parent (hill climber) evolving over 5 generations with each generation getting 1000 iterations. As you can see, the performance is still poor, but the PHC runs are clearly evolving from one another as the score increases from PHC run to the next PHC run (shown at the end in the shell). It's clear I still need to modify the fitness function and need to begin tracking fitness over time to see how modifying the fitness function impacts the performance of the evolutionary algorithm. However, we do see slight improvement over the standard hill climber demonstration, as shown in my previous milestone submission. I ran out of time to capture the outcome for each permutation of body types (with arms, without arms, with rotating hip, without rotating hip), so what we see here is a demonstration of the evolutionary algorithm running both with arms and with a rotating hip. 
+
+Demonstration: https://www.youtube.com/watch?v=FS5IBJJLR9U
+

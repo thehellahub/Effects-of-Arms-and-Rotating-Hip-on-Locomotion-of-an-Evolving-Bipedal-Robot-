@@ -1,0 +1,145 @@
+Nicholas Hella
+CS 206: Final Project Milestones 8
+04/24/23
+
+Project Description:
+
+	Of all the animals on Earth, only few express bipedal locomotion. I plan to generate bipedal robots of varying body forms (with arms, with no arms, with rotating hip, without rotating hip) and then test for which permutation of attributes the evolutionary algorithm can evolve the fastest (or most successful) gait (forward motion).
+
+
+Progress Note: 
+
+	I'm testing across 4 body permutations (no arms + no rotating hip, no arms + rotating hip, arms + no rotating hip, arms + rotating hip), each with 4 different fitness functions. I reduced the motor strength from 120 to 90 for body permutations without arms to try to get them to hop less in the beginning, and this didn't seem to do much. I may need to try reducing more. The training varied from 18-30 hours but the settings are the same across all the runs: 10 total PHC runs, 1 in 5 odds of starting from the brain of a previous PHC run. Each PHC runs w/ 10 generations, population size 10, and 1000 iterations. For the below fitness functions, I tried to improve the ability to balance by adding exponents to attributes that promote balance and standing upright. I didn't put an exponent on the avg height because I didn't want to promote jumping behavior. The videos definitely reflect improved balanced, but the quality of forward locomotion seems to have slightly compromised as well. Regardless, the same results show from milestone 7 that having arms significantly helps with balance and rotating hip improves the length of travel. It was interesting though to see that more runs successfully stayed upright with arms and without rotating hip than with rotating hip.
+
+	
+
+Fitness Functions:
+
+	Fitness Function 1: 
+		
+		xCoordinateOfLinkZero * (zCoordinateOfLinkZero^2)
+
+	Fitness Function 2: 
+
+		xCoordinateOfLinkZero * (zCoordinateOfLinkZero^2) * (time_standing_upright^2)
+		 
+			Note: time_standing_upright = amount of time (in seconds) that the head was taller than half its body height
+
+	Fitness Function 3: 
+		
+		xCoordinateOfLinkZero * (zCoordinateOfLinkZero^2) * (time_standing_upright*2) * avg_height
+
+	Fitness Function 4: 
+		
+		xCoordinateOfLinkZero * (zCoordinateOfLinkZero^3) * (time_standing_upright^3)
+
+
+RESULTS:
+
+
+	ARMS 0 ROTATING HIP 0
+
+		FITNESS FUNCTION 1
+
+			YOUTUBE: https://youtu.be/uQbtVeNBFWk (FAIL)
+
+			PLOT: https://imgur.com/a/fSkNa2c
+
+		FITNESS FUNCTION 2
+
+			YOUTUBE: https://youtu.be/Y6CkWfQlvg4 (FAIL)
+
+			PLOT: https://imgur.com/a/3lqvUEN
+
+		FITNESS FUNCTION 3
+
+			YOUTUBE: https://youtu.be/0xRGrSPegD8 (FAIL)
+
+			PLOT: https://imgur.com/a/d1Js1GW
+
+		FITNESS FUNCTION 4
+
+			YOUTUBE: https://youtu.be/ZCBMeHI4l84 (FAIL) 
+
+			PLOT: https://imgur.com/a/1Uwt6Uw
+
+
+	ARMS 1 ROTATING HIP 0
+
+		FITNESS FUNCTION 1
+
+			YOUTUBE: https://youtu.be/oGTzRSqAXnI (SUCCESS?)
+
+			PLOT: https://imgur.com/a/CdWNnH3
+
+		FITNESS FUNCTION 2
+
+			YOUTUBE: https://youtu.be/a3TbDOfozps (SUCCESS?)
+
+			PLOT: https://imgur.com/a/hdPJEo0
+
+		FITNESS FUNCTION 3
+
+			YOUTUBE: https://youtu.be/T9BhEce0AcU (SUCCESS) (BEST)
+
+			PLOT: https://imgur.com/a/RBUC8qw
+
+		FITNESS FUNCTION 4
+
+			YOUTUBE: https://youtu.be/mGUbKxvXaWA (SUCCESS)
+
+			PLOT: https://imgur.com/a/QKapwCh
+
+	ARMS 0 ROTATING HIP 1
+
+		FITNESS FUNCTION 1
+
+			YOUTUBE: https://youtu.be/EhfVM4Yvt2A (FAIL)
+
+			PLOT: https://imgur.com/a/RJVNo5A
+
+		FITNESS FUNCTION 2
+
+			YOUTUBE: https://youtu.be/OEC_9xKLWFQ (FAIL)
+
+			PLOT: https://imgur.com/a/Poyz5Tl
+
+		FITNESS FUNCTION 3
+
+			YOUTUBE: https://youtu.be/sQ51RLsLtWg (FAIL)
+
+			PLOT: https://imgur.com/a/6106mzc
+
+		FITNESS FUNCTION 4
+
+ 			YOUTUBE: https://youtu.be/8RST0lr_45o (FAIL)
+
+			PLOT: https://imgur.com/a/Pdcx1i9
+
+	ARMS 1 ROTATING HIP 1
+
+		FITNESS FUNCTION 1
+
+			YOUTUBE: https://youtu.be/v8OMOIEyeNk (SUCCESS) (BEST 2)
+
+			PLOT: https://imgur.com/a/Z5ucSrY
+
+		FITNESS FUNCTION 2
+
+			YOUTUBE: https://youtu.be/Mxe97zqbuLo (SUCCESS)
+
+			PLOT: https://imgur.com/a/HVaMoi3
+
+		FITNESS FUNCTION 3
+
+			YOUTUBE: https://youtu.be/ajGhokWSxhw (SUCCESS)
+
+			PLOT: https://imgur.com/a/uX2MmuZ
+
+		FITNESS FUNCTION 4
+
+			YOUTUBE: https://youtu.be/ITfsslYjOLc (WOULD HAVE FAILED)
+
+			PLOT: https://drive.google.com/file/d/1yfaFaxYD4XTQhZ9dyfQNExdqVGEnvz13/view?usp=share_link
+
+				(Looks like imgur will only allow you to upload 15 per day. Note to self, don't upload all plots on night of assignment for future reference.)

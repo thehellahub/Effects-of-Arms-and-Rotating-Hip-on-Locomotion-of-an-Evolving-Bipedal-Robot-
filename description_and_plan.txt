@@ -1,0 +1,30 @@
+Nick Hella
+CS 206: Evolutionary Robotics
+Assignment 11: Final Project Description and Plan
+02/25/23
+
+Description:
+
+Of all the animals on Earth, only few express bipedal locomotion. I plan to generate bipedal robots of varying body forms (with arms, with no arms, with rotating hip, without rotating hip) and then test for which permutation of attributes the evolutionary algorithm can evolve the fastest (or most successful) gait (forward motion).
+
+
+Plan:
+
+
+1.) I will generate a robot with two legs that can stand on its own. The legs with have appropriate hinges/joints such that they're able to bend. Then I'll make a copy of this robot with arms as well. The robot(s) will have no Neural net. I’ll comment out all my code that generates and simulates the sensors, motors, and neural network controller. I’ll submit a video showing the robots being simulated, and I’ll drag them around with the mouse to show the joints are all correct. The robots won’t move on their own, because they have no neural controllers at this point.
+
+2.) I will then make a copy of each of these robots with and without a rotating hip. I’ll submit a video showing the robots being simulated, and I’ll drag them around with the mouse to show the joints are all correct. The robots won’t move on their own, because they have no neural controllers at this point.
+
+3.) I’ll now modify my code to generate sensors. I’ll submit images of how the values of these sensors change as I drag my robot around with a mouse, like we did in the Sensors module.
+
+4.) I’ll now modify the robot’s neural network to connect the sensors to the motors. To prove the NN is working, I’ll submit a video showing the two-legged robot moving randomly.
+
+5.) I will modify my evolutionary algorithm such that it can generate forward locomotion for the robots. I’ll submit a short video showing this bot being controlled by a random controller, and an evolved controller. The latter will clearly be seen to be moving faster.
+
+6) I will now know where in my code things need to be changed, if the robot’s ability to have arms changes, as well as if it should have a rotating hip. So, I’ll modify my code to procedurally generate different permutations of these attributes on a robot. I’ll prove this by submitting a video showing me changing the value of a two boolean variable - ARMS and ROTATING_HIP - to, say, True, running the code, and then showing an two-legged robot with arms and a rotating hip, etc. (the robots won’t yet have a neural network).
+
+7.) I’ll now modify my code to generate the appropriate number of sensors, motors, and neural network connecting them. To prove that’s working, I’ll submit a video showing me changing this variable, running the code, and showing a randomly-moving robot with that many legs.
+
+8.) I’ll now modify my evolutionary algorithm to also respond to these new variables appropriately. To prove it’s working, I’ll submit a video showing me changing these variables, starting the code, a robot with rotating hips and arms controlled by a random controller will be shown, a robot with no rotating hip and arms withh be shown, a robot with no arms and rotating hips will be shown, and a robot with no arms and no rotating hip will be shown. The evolutionary progress in the console for each will be shown, and the final, evolved robot for each will be shown, alongside their fitness scores to see how each performed in contrast to one another. 
+
+9.) I’ll submit videos and data showing the results from my A/B test: how well (or how poorly) the evolutionary algorithm does at evolving fast gaits for a robot with a rotating hip and arms, a robot with a rotating hip without arms, a robot with a static hip and arms, and a robot with a static hip and no arms. 

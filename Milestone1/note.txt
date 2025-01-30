@@ -1,0 +1,24 @@
+Nicholas Hella
+CS 206: Final Project Milestones 1 & 2
+03/05/23
+
+Project Description:
+
+Of all the animals on Earth, only few express bipedal locomotion. I plan to generate bipedal robots of varying body forms (with arms, with no arms, with rotating hip, without rotating hip) and then test for which permutation of attributes the evolutionary algorithm can evolve the fastest (or most successful) gait (forward motion).
+
+
+Progress Note:
+
+For Monday, 03/06/23, I'm supposed to complete Milestone 1 by generating the body of a robot with two legs that can stand on its own, with the appropriate hinges/joints to bend its' legs for bipedal locomotion. I was to then also make a copy of this robot but with arms (and to make this feature togglable in a config file). Given a rough bout with what I presume was influenza and an inability to do anything other than quarantine & code, I completed both this milestone and the next, Milestone 2. The goal of Milestone 2 was to make a copy of each of the two robots in Milestone 1, but with and without rotating hips (making for four robots total: with rotating hip & with arms, without rotating hip & with arms, with rotating hip & without arms, without rotating hip & without arms). Additionally, I made it so that the following body attributes were all dynamic in the config file: foot height, shin height, thigh height, torso height, neck height, head height, shoulder height, arm height, torso width, shoulder width, arm width, foot length, and torso depth. I am happy to have finished the second milestone in advance as this will give me more time to focus on building motors and sensors -- the next two milestones.
+
+Demonstration: https://youtu.be/OVfmU6kA80g
+
+
+Milestone 1:
+
+I will generate a robot with two legs that can stand on its own. The legs with have appropriate hinges/joints such that they're able to bend. Then I'll make a copy of this robot with arms as well. The robot(s) will have no Neural net. I’ll comment out all my code that generates and simulates the sensors, motors, and neural network controller. I’ll submit a video showing the robots being simulated, and I’ll drag them around with the mouse to show the joints are all correct. The robots won’t move on their own, because they have no neural controllers at this point.
+
+Milestone 2:
+
+I will then make a copy of each of these robots with and without a rotating hip. I’ll submit a video showing the robots being simulated, and I’ll drag them around with the mouse to show the joints are all correct. The robots won’t move on their own, because they have no neural controllers at this point.
+

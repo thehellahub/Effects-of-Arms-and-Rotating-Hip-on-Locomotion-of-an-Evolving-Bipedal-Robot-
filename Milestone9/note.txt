@@ -1,0 +1,29 @@
+Nicholas Hella
+CS 206: Final Project Milestones 9 (AB Testing)
+05/01/23
+
+Project Description:
+
+	Of all the animals on Earth, only few express bipedal locomotion. I plan to generate bipedal robots of varying body forms (with arms, with no arms, with rotating hip, without rotating hip) and then test for which permutation of attributes the evolutionary algorithm can evolve the fastest (or most successful) gait (forward motion).
+
+
+Progress Note: 
+
+	Below is a link to a spreadsheet containing the results for my A/B testing. In this spreadsheet, there are 4 sheets:
+
+	1.) "Random Weights" --> This sheet contains a table pointing to videos of the performance of the robot with varying body type attributes and with random weights assigned to its neural network synapses. The body type acronyms (ie: arms0RTH0, arms0RTH1, arms1RTH0, arms1RTH1) are described in the uppermost table. 
+
+	2.) "Video Matrix" --> This sheet contains a table pointing to videos of the performance of the robot with varying body type attributes and with neural networks trained against various fitness functions. The body type acronyms (ie: arms0RTH0, arms0RTH1, arms1RTH0, arms1RTH1) and the fitness functions are described in the uppermost tables, as well as some of the global settings used in the algorithms to train the neural networks.
+
+	3.) "Plot Matrix" --> This sheet contains a table pointing to plots of the performance (fitness scores) of the robot with varying body type attributes with neural networks trained against various fitness functions. The body type acronyms (ie: arms0RTH0, arms0RTH1, arms1RTH0, arms1RTH1) and the fitness functions are described in the uppermost tables, as well as some of the global settings used in the algorithms to train the neural networks.
+
+	4.) "Fitness Matrix" --> This sheet contains a table highlighting the best fitness scores of the robot with varying body type attributes and with neural networks trained against various fitness functions. Column-wise, the best fitness score per fitness function is highlighted and for each row the number of highlighted cells is tallied in the "Total" column, highlighting which body type performed best. The body type acronyms (ie: arms0RTH0, arms0RTH1, arms1RTH0, arms1RTH1) and the fitness functions are described in the uppermost tables, as well as some of the global settings used in the algorithms to train the neural networks.
+
+	5.) "Performance Matrix" --> This sheet contains a table highlighting the performance of the robot with varying body type attributes and with neural networks trained against various fitness functions. For each column representing a fitness function, the cells underneath are colored to represent the performance of the robot. Red cells indicate that the robot fell, yellow indicate that it started walking and then fell, and green signals a successful walk. By assigning a score to each color and tallying the number of reds, yellows, and greens per row (body type), I can normalize the data to judge which body type performs best.  The body type acronyms (ie: arms0RTH0, arms0RTH1, arms1RTH0, arms1RTH1), the colors and their respective scores, and the fitness functions are all described in the uppermost tables, as well as some of the global settings used in the algorithms to train the neural networks.	
+
+	Using the results from both the fitness matrix and the performance matrix, I can say that the data supports the claim that having both arms and a rotating hip evolves the fastest (or most successful) gait (forward motion) using my evolutionary algorithm.
+
+
+Link to spreadsheet: 
+	
+	https://docs.google.com/spreadsheets/d/1PM4tBry7a-n3Ik0jqWayYJu1PHZkNzTtqvZo7fLXEPI/edit?usp=sharing
